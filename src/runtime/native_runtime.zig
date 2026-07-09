@@ -64,7 +64,6 @@ pub const Rule = struct {
 fn regexVmLimit(comptime len: usize) comptime_int {
     return if (len <= 64) 64 else if (len <= 512) 512 else zhl.dsl.max_string_bytes;
 }
-
 fn regexMayStart(comptime value: []const u8, byte: u8) bool {
     const start = comptime zhl.rule_meta.regexLiteralStart(value);
     return if (start) |literal| byte == literal else true;
@@ -429,7 +428,6 @@ pub fn Grammar(comptime grammar_name: []const u8, comptime root_scope: []const u
         }
     };
 }
-
 fn canUseIdentifierFastPath(comptime rules: []const Rule) bool {
     for (rules) |rule| {
         if (ruleMayStartIdentifier(rule)) return false;
@@ -445,7 +443,6 @@ fn ruleMayStartIdentifier(comptime rule: Rule) bool {
         else => rule.value.len > 0 and zhl.scan.isIdentStart(rule.value[0]),
     };
 }
-
 fn buildMask(comptime rules: []const Rule) zhl.ByteMask256 {
     @setEvalBranchQuota(10_000_000);
     var mask = zhl.ByteMask256.empty();
@@ -476,7 +473,6 @@ fn emit(sink: anytype, start: usize, end: usize, style_id: zhl.StyleId, emitted:
     });
     emitted.* += 1;
 }
-
 fn styleFromRule(comptime rule: Rule) zhl.StyleId {
     return comptime zhl.style.styleFromScope(rule.scope);
 }
