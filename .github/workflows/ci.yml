@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  zig:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mlugg/setup-zig@v2
+        with:
+          version: 0.16.0
+      - run: tools/check_file_lines.sh
+      - run: zig build check-licenses
+      - run: zig build check-corpus-counts
+      - run: zig build check-runtime-boundary
+      - run: zig build check-public-api-docs
+      - run: zig build check-release-docs
+      - run: zig build test
+      - run: zig build -Doptimize=ReleaseFast
+      - run: zig build check-integrations -Doptimize=ReleaseFast
+      - run: zig build wasm
+
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mlugg/setup-zig@v2
+        with:
+          version: 0.16.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: benchmark/package-lock.json
+      - uses: dtolnay/rust-toolchain@stable
+      - run: npm ci --prefix benchmark
+      - run: zig build check-v1 -Doptimize=ReleaseFast

@@ -1,0 +1,111 @@
+/**
+ * zhl theme: GitHub (auto)
+ *
+ * Applies the GitHub Light palette by default and switches to GitHub Dark
+ * when the user prefers a dark color scheme. Apply the `zhl-github` class
+ * to a wrapper element (typically the <pre> around zhl's rendered output).
+ *
+ * All rules reference CSS custom properties, so only the variable
+ * definitions change between color schemes.
+ */
+
+.zhl-github {
+  --zhl-bg: #ffffff;
+  --zhl-fg: #1f2328;
+  --zhl-comment: #57606a;
+  --zhl-constant: #0550ae;
+  --zhl-entity: #6639ba;
+  --zhl-keyword: #cf222e;
+  --zhl-string: #0a3069;
+  --zhl-variable: #953800;
+  --zhl-invalid-fg: #cf222e;
+  --zhl-invalid-bg: rgba(207, 34, 46, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .zhl-github {
+    --zhl-bg: #0d1117;
+    --zhl-fg: #e6edf3;
+    --zhl-comment: #8b949e;
+    --zhl-constant: #79c0ff;
+    --zhl-entity: #d2a8ff;
+    --zhl-keyword: #ff7b72;
+    --zhl-string: #a5d6ff;
+    --zhl-variable: #ffa657;
+    --zhl-invalid-fg: #f85149;
+    --zhl-invalid-bg: rgba(248, 81, 73, 0.15);
+  }
+}
+
+.zhl-github {
+  background-color: var(--zhl-bg);
+  color: var(--zhl-fg);
+}
+
+.zhl-github pre,
+.zhl-github code {
+  background-color: var(--zhl-bg);
+  color: var(--zhl-fg);
+}
+
+.zhl-github .zhl-plain {
+  color: var(--zhl-fg);
+}
+
+.zhl-github .zhl-comment {
+  color: var(--zhl-comment);
+}
+
+.zhl-github .zhl-doc-comment,
+.zhl-github .zhl-container-doc-comment {
+  color: var(--zhl-comment);
+  font-style: italic;
+}
+
+.zhl-github .zhl-string,
+.zhl-github .zhl-multiline-string,
+.zhl-github .zhl-char {
+  color: var(--zhl-string);
+}
+
+.zhl-github .zhl-escape,
+.zhl-github .zhl-format-placeholder {
+  color: var(--zhl-constant);
+}
+
+.zhl-github .zhl-number-integer,
+.zhl-github .zhl-number-float {
+  color: var(--zhl-constant);
+}
+
+.zhl-github .zhl-keyword,
+.zhl-github .zhl-operator {
+  color: var(--zhl-keyword);
+}
+
+.zhl-github .zhl-builtin,
+.zhl-github .zhl-type-name {
+  color: var(--zhl-variable);
+}
+
+.zhl-github .zhl-function {
+  color: var(--zhl-entity);
+}
+
+.zhl-github .zhl-parameter {
+  color: var(--zhl-fg);
+}
+
+.zhl-github .zhl-field,
+.zhl-github .zhl-label {
+  color: var(--zhl-constant);
+}
+
+.zhl-github .zhl-punctuation {
+  color: var(--zhl-fg);
+}
+
+.zhl-github .zhl-invalid {
+  color: var(--zhl-invalid-fg);
+  background-color: var(--zhl-invalid-bg);
+}

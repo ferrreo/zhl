@@ -1,0 +1,26 @@
+{
+  "name": "@zhl/themes",
+  "version": "0.1.0",
+  "description": "First-class CSS themes for the zhl syntax highlighting engine (GitHub / Primer palettes)",
+  "type": "module",
+  "exports": {
+    "./github-dark.css": "./github-dark.css",
+    "./github-light.css": "./github-light.css",
+    "./github.css": "./github.css"
+  },
+  "files": [
+    "github-dark.css",
+    "github-light.css",
+    "github.css",
+    "README.md"
+  ],
+  "keywords": [
+    "syntax-highlighting",
+    "theme",
+    "css",
+    "github",
+    "primer",
+    "zhl"
+  ],
+  "license": "MIT"
+}

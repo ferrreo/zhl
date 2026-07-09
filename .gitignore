@@ -1,3 +1,16 @@
+.toolchain/
 .zig-cache/
+zig-cache/
 zig-out/
+zig-pkg/
+node_modules/
+benchmark/node_modules/
+benchmark/visual/
+benchmark/benchmark/visual/
+benchmark/syntect/target/
+benchmark/syntect_fancy/target/
 *.o
+src/grammars_ext/
+zig-out/grammars_selected/
+benchmark/results/
+benchmark/browser/shiki_bundle.js

@@ -1,0 +1,174 @@
+{
+  "schema": "zhl.corpus-manifest.v1",
+  "version": 1,
+  "source_note": "source=current-repo-snapshot means no upstream URL is recorded in this repository snapshot.",
+  "groups": [
+    {
+      "id": "native_zhl_grammars",
+      "paths": ["grammars/*.zhl"],
+      "kind": "native-zhl-source",
+      "source": "current-repo-snapshot",
+      "lockfile": "corpus/locks/native.sha256",
+      "license_paths": ["LICENSE"],
+      "expected_counts": {
+        "files": 25
+      }
+    },
+    {
+      "id": "native_zhlb_packs",
+      "paths": ["grammars/*.zhlb"],
+      "kind": "generated-zhlb-pack",
+      "source": "current-repo-snapshot",
+      "lockfile": "corpus/locks/native.sha256",
+      "license_paths": ["LICENSE"],
+      "expected_counts": {
+        "files": 25
+      }
+    },
+    {
+      "id": "textmate_json_grammars",
+      "paths": ["grammars/textmate/*.tmLanguage.json"],
+      "kind": "textmate-json-source",
+      "source": "current-repo-snapshot",
+      "upstream": {
+        "type": "npm-tarball",
+        "package": "@shikijs/langs",
+        "version": "4.3.0",
+        "url": "https://registry.npmjs.org/@shikijs/langs/-/langs-4.3.0.tgz",
+        "integrity": "sha512-rnlq7vDQCDbUTQ7vVz2T0xspRxdBApYsbO6Byy7aFEt15YqACg0c+PBcJ2oExueG8ocDLHWQ2YyDLvMqRwN1Cg=="
+      },
+      "lockfile": "corpus/locks/textmate-source.sha256",
+      "license_paths": ["grammars/textmate/LICENSE.md"],
+      "expected_counts": {
+        "files": 271
+      }
+    },
+    {
+      "id": "textmate_zhlb_packs",
+      "paths": ["grammars/textmate-packs/*.zhlb"],
+      "kind": "generated-zhlb-pack",
+      "source": "current-repo-snapshot",
+      "lockfile": "corpus/locks/textmate-packs.sha256",
+      "license_paths": ["grammars/textmate/LICENSE.md"],
+      "expected_counts": {
+        "files": 271
+      }
+    },
+    {
+      "id": "sublime_source_chunks",
+      "paths": ["grammars/sublime/*.sublime-syntax.part*"],
+      "kind": "sublime-syntax-source-chunk",
+      "source": "current-repo-snapshot",
+      "upstream": {
+        "type": "git",
+        "url": "https://github.com/sublimehq/Packages",
+        "revision": "d9b8221ee37ef8f6376f33ac53a175c08962f516"
+      },
+      "lockfile": "corpus/locks/sublime-source.sha256",
+      "license_paths": ["grammars/sublime/LICENSE"],
+      "expected_counts": {
+        "chunks": 212,
+        "syntaxes": 113,
+        "extends_edges": 42,
+        "extends_targets": 25,
+        "syntax_include_edges": 38,
+        "syntax_include_targets": 19
+      }
+    },
+    {
+      "id": "sublime_zhlb_packs",
+      "paths": ["grammars/sublime-packs/*.zhlb"],
+      "kind": "generated-zhlb-pack",
+      "source": "current-repo-snapshot",
+      "lockfile": "corpus/locks/sublime-packs.sha256",
+      "license_paths": ["grammars/sublime/LICENSE"],
+      "expected_counts": {
+        "files": 113
+      }
+    },
+    {
+      "id": "external_sublime_fixtures",
+      "paths": ["tests/fixtures/sublime_external/*.sublime-syntax.part*"],
+      "kind": "sublime-syntax-fixture-chunk",
+      "source": "current-repo-snapshot",
+      "upstream": {
+        "type": "git",
+        "url": "https://github.com/sublimehq/Packages",
+        "revision": "d9b8221ee37ef8f6376f33ac53a175c08962f516"
+      },
+      "lockfile": "corpus/locks/sublime-external.sha256",
+      "license_paths": ["tests/fixtures/sublime_external/LICENSE"],
+      "expected_counts": {
+        "chunks": 52,
+        "syntaxes": 19,
+        "extends_edges": 3,
+        "extends_targets": 3
+      }
+    },
+    {
+      "id": "external_textmate_json_fixtures",
+      "paths": ["tests/fixtures/textmate_external/*.tmLanguage.json.part*"],
+      "kind": "textmate-json-fixture-chunk",
+      "source": "current-repo-snapshot",
+      "upstream": {
+        "type": "git",
+        "url": "https://github.com/microsoft/vscode",
+        "revision": "7207f731a477434811e61ca70e6c66ee4dc393fd"
+      },
+      "lockfile": "corpus/locks/textmate-external.sha256",
+      "license_paths": [
+        "tests/fixtures/textmate_external/LICENSE-ASP-VB-NET-TMBUNDLE",
+        "tests/fixtures/textmate_external/LICENSE-BETTER-OBJC-SYNTAX",
+        "tests/fixtures/textmate_external/LICENSE-BETTER-SHELL-SYNTAX",
+        "tests/fixtures/textmate_external/LICENSE-DART-SYNTAX-HIGHLIGHT",
+        "tests/fixtures/textmate_external/LICENSE-DIFF-TMBUNDLE",
+        "tests/fixtures/textmate_external/LICENSE-DOTENV-VSCODE",
+        "tests/fixtures/textmate_external/LICENSE-GIT-COMMIT-MESSAGE-PLUS",
+        "tests/fixtures/textmate_external/LICENSE-GIT-TMBUNDLE",
+        "tests/fixtures/textmate_external/LICENSE-GO-SYNTAX",
+        "tests/fixtures/textmate_external/LICENSE-INI-TMBUNDLE",
+        "tests/fixtures/textmate_external/LICENSE-LANGUAGE-BATCHFILE",
+        "tests/fixtures/textmate_external/LICENSE-LANGUAGE-CLOJURE",
+        "tests/fixtures/textmate_external/LICENSE-LANGUAGE-SASS",
+        "tests/fixtures/textmate_external/LICENSE-LANGUAGE-XML",
+        "tests/fixtures/textmate_external/LICENSE-MAGICPYTHON",
+        "tests/fixtures/textmate_external/LICENSE-MAKE-TMBUNDLE",
+        "tests/fixtures/textmate_external/LICENSE-MICROSOFT",
+        "tests/fixtures/textmate_external/LICENSE-MOBY",
+        "tests/fixtures/textmate_external/LICENSE-POWERSHELL-EDITORSYNTAX",
+        "tests/fixtures/textmate_external/LICENSE-RUST-SYNTAX",
+        "tests/fixtures/textmate_external/LICENSE-SHADERS-TMLANGUAGE",
+        "tests/fixtures/textmate_external/LICENSE-TYPESCRIPT-TMLANGUAGE",
+        "tests/fixtures/textmate_external/LICENSE-VSCODE-JSON-TMLANGUAGE",
+        "tests/fixtures/textmate_external/LICENSE-VSCODE-LATEX-BASICS",
+        "tests/fixtures/textmate_external/LICENSE-VSCODE-MSSQL",
+        "tests/fixtures/textmate_external/LICENSE-VSCODE-R-SYNTAX"
+      ],
+      "expected_counts": {
+        "chunks": 109,
+        "syntaxes": 40
+      }
+    },
+    {
+      "id": "external_textmate_plist_fixtures",
+      "paths": ["tests/fixtures/textmate_plist_external/*.tmLanguage"],
+      "kind": "textmate-plist-fixture",
+      "source": "current-repo-snapshot",
+      "upstream": {
+        "type": "url-list",
+        "revision": null,
+        "note": "README records source URLs, but local evidence does not pin upstream revisions."
+      },
+      "lockfile": "corpus/locks/textmate-plist-external.sha256",
+      "license_paths": [
+        "tests/fixtures/textmate_plist_external/LICENSE-DIFF-TMBUNDLE",
+        "tests/fixtures/textmate_plist_external/LICENSE-GIT-TMBUNDLE",
+        "tests/fixtures/textmate_plist_external/LICENSE-JAVASCRIPTNEXT",
+        "tests/fixtures/textmate_plist_external/LICENSE-TEXTMATE-BUNDLES"
+      ],
+      "expected_counts": {
+        "files": 8
+      }
+    }
+  ]
+}

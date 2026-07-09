@@ -1,0 +1,91 @@
+/**
+ * zhl theme: GitHub Light
+ *
+ * Colors match GitHub's Primer "prettylights" syntax palette (light).
+ * Scope: apply the `zhl-github-light` class to a wrapper element
+ * (typically the <pre> around zhl's rendered output).
+ */
+
+.zhl-github-light {
+  --zhl-bg: #ffffff;
+  --zhl-fg: #1f2328;
+  --zhl-comment: #57606a;
+  --zhl-constant: #0550ae;
+  --zhl-entity: #6639ba;
+  --zhl-keyword: #cf222e;
+  --zhl-string: #0a3069;
+  --zhl-variable: #953800;
+  --zhl-invalid-fg: #cf222e;
+  --zhl-invalid-bg: rgba(207, 34, 46, 0.1);
+
+  background-color: var(--zhl-bg);
+  color: var(--zhl-fg);
+}
+
+.zhl-github-light pre,
+.zhl-github-light code {
+  background-color: var(--zhl-bg);
+  color: var(--zhl-fg);
+}
+
+.zhl-github-light .zhl-plain {
+  color: var(--zhl-fg);
+}
+
+.zhl-github-light .zhl-comment {
+  color: var(--zhl-comment);
+}
+
+.zhl-github-light .zhl-doc-comment,
+.zhl-github-light .zhl-container-doc-comment {
+  color: var(--zhl-comment);
+  font-style: italic;
+}
+
+.zhl-github-light .zhl-string,
+.zhl-github-light .zhl-multiline-string,
+.zhl-github-light .zhl-char {
+  color: var(--zhl-string);
+}
+
+.zhl-github-light .zhl-escape,
+.zhl-github-light .zhl-format-placeholder {
+  color: var(--zhl-constant);
+}
+
+.zhl-github-light .zhl-number-integer,
+.zhl-github-light .zhl-number-float {
+  color: var(--zhl-constant);
+}
+
+.zhl-github-light .zhl-keyword,
+.zhl-github-light .zhl-operator {
+  color: var(--zhl-keyword);
+}
+
+.zhl-github-light .zhl-builtin,
+.zhl-github-light .zhl-type-name {
+  color: var(--zhl-variable);
+}
+
+.zhl-github-light .zhl-function {
+  color: var(--zhl-entity);
+}
+
+.zhl-github-light .zhl-parameter {
+  color: var(--zhl-fg);
+}
+
+.zhl-github-light .zhl-field,
+.zhl-github-light .zhl-label {
+  color: var(--zhl-constant);
+}
+
+.zhl-github-light .zhl-punctuation {
+  color: var(--zhl-fg);
+}
+
+.zhl-github-light .zhl-invalid {
+  color: var(--zhl-invalid-fg);
+  background-color: var(--zhl-invalid-bg);
+}
