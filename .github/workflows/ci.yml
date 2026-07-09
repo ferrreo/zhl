@@ -19,7 +19,6 @@ jobs:
         with:
           version: 0.16.0
       - run: tools/check_file_lines.sh
-      - run: zig build check-licenses
       - run: zig build check-corpus-counts
       - run: zig build check-runtime-boundary
       - run: zig build check-public-api-docs
@@ -43,4 +42,5 @@ jobs:
           cache-dependency-path: benchmark/package-lock.json
       - uses: dtolnay/rust-toolchain@stable
       - run: npm ci --prefix benchmark
+      - run: zig build check-licenses
       - run: zig build check-v1 -Doptimize=ReleaseFast
